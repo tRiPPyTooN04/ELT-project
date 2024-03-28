@@ -1,4 +1,4 @@
-# ETL_pipeline_1 project
+# ELT project
 
 This repository contains a custom Extract, Transform , Load (ETL) project that utilizes Docker,  Airflow, DBT, and PostgreSQL to demonstrate a simple ETL process.
 

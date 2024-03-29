@@ -1,6 +1,6 @@
 # ELT project
 
-This repository contains a custom Extract, Transform , Load (ETL) project that utilizes Docker,  Airflow, DBT, and PostgreSQL to demonstrate a simple ETL process.
+This repository contains a custom Extract, Transform , Load (ELT) project that utilizes Docker,  Airflow, DBT, and PostgreSQL to demonstrate a simple ELT process.
 
 ## Repository Structure
 
@@ -12,7 +12,7 @@ This repository contains a custom Extract, Transform , Load (ETL) project that u
    - `scheduler`: Airflow's scheduler to orchestrate your tasks.
 all these containers run in one network called etl_network.
 
-2. **airflow**: This folder contains the Airflow DAG including the tasks to orchestrate both etl_script and DBT to complete the ETL workflow
+2. **airflow**: This folder contains the Airflow DAG including the tasks to orchestrate both etl_script and DBT to complete the ELT workflow
    
 3.**custom-postgres**: Has all the models needed for correctedness of data and tranformations need to be done on the data .
 
@@ -31,11 +31,11 @@ all these containers run in one network called etl_network.
 
 2. **Database Initialization**: The `init.sql` script initializes the source database with sample data. It creates several tables and populates them with sample data.
 
-3. **ETL Process**:  Airflow will run the etl_script to transfer data from source_postgres to destination_postgres   and then DBT to run the transformations on top of the destination database.
+3. **ELT Process**:  Airflow will run the etl_script to transfer data from source_postgres to destination_postgres   and then DBT to run the transformations on top of the destination database.
 
 ## Airflow DAG Description
 
-This Airflow DAG orchestrates a simple ETL process using Docker, Airflow, DBT, and PostgreSQL. The DAG consists of two tasks:
+This Airflow DAG orchestrates a simple ETL process using Docker,  DBT, and PostgreSQL. The DAG consists of two tasks:
 
 1. **Run ETL Script Task**: This task executes an ETL script (`etl_script.py`) that transfers data from a source PostgreSQL database to a destination PostgreSQL database. The script is responsible for extracting data from the source, transforming it as necessary, and loading it into the destination.
 
@@ -47,5 +47,5 @@ This Airflow DAG orchestrates a simple ETL process using Docker, Airflow, DBT, a
 
 2. **Database Initialization**: The `init.sql` script initializes the source database with sample data, creating tables for users, films, film categories, actors, and film actors, and populating them with sample data.
 
-3. **ETL Process**: The DAG triggers the execution of the ETL script task, which transfers data from the source to the destination database. Once this task completes successfully, the DBT task is triggered to run transformations on the destination database.
+3. **ETL Process**: The DAG triggers the execution of the ELT script task, which transfers data from the source to the destination database. Once this task completes successfully, the DBT task is triggered to run transformations on the destination database.
 

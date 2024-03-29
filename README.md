@@ -12,7 +12,7 @@ This repository contains a custom Extract, Transform , Load (ETL) project that u
    - `scheduler`: Airflow's scheduler to orchestrate your tasks.
 all these containers run in one network called etl_network.
 
-2. **airflow**: This folder contains the Airflow project including the dags to orchestrate both etl_script and DBT to complete the ETL workflow
+2. **airflow**: This folder contains the Airflow DAG including the tasks to orchestrate both etl_script and DBT to complete the ETL workflow
    
 3.**custom-postgres**: Has all the models needed for correctedness of data and tranformations need to be done on the data .
 
